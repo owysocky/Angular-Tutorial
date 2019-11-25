@@ -29,9 +29,10 @@ import { Passenger } from "../../models/passenger.interface";
             : "Not checked in"
         }}
       </div>
-      <div class="children">Children: {{ detail.children?.length || 0 }}</div>
+      <div class="children">Baggage: {{ detail.baggage.value }}</div>
       <button (click)="toggleEdit()">{{ editing ? "Done" : "Edit" }}</button>
-      <button (click)="onRemove()">"Remove"</button>
+      <button (click)="onRemove()">Remove</button>
+      <button (click)="goToPassanger()">View</button>
     </div>
   `
 })
@@ -42,6 +43,8 @@ export class PassengerDetailComponent {
   remove: EventEmitter<Passenger> = new EventEmitter();
   @Output()
   edit: EventEmitter<Passenger> = new EventEmitter();
+  @Output()
+  view: EventEmitter<Passenger> = new EventEmitter();
 
   editing: boolean = false;
   constructor() {}
@@ -56,5 +59,8 @@ export class PassengerDetailComponent {
   }
   onRemove() {
     this.remove.emit(this.detail);
+  }
+  goToPassanger() {
+    this.view.emit(this.detail);
   }
 }

@@ -31,9 +31,9 @@ export class AppComponent {
       exact: true
     },
     {
-      link: "**",
-      name: "oops",
-      exact: false
+      link: "/passengers",
+      name: "Passengers",
+      exact: true
     }
   ];
 }
