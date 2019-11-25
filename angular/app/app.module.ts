@@ -14,6 +14,15 @@ const routes: Routes = [
   { path: "**", component: NotFoundComponent }
 ];
 
+// const routes: Routes = [
+//   {
+//     path: "",
+//     redirectTo: "passengers",
+//     pathMatch: "full"
+//   },
+//   { path: "**", component: NotFoundComponent }
+// ];
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFoundComponent],
   bootstrap: [AppComponent],
